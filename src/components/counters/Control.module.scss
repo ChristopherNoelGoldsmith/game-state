@@ -1,0 +1,6 @@
+@use '../sass/mixins.module.scss';
+
+.control{
+    @include mixins.border-round;
+    background: ivory;
+}

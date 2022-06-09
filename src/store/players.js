@@ -3,11 +3,14 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     player1: {
         active: true,
-        health: null,
+        health: 20,
+        maxHealth: 40
+
     },
     player2: {
         active: false,
-        health: null
+        health: 20,
+        maxHealth: 40
     }
 };
 

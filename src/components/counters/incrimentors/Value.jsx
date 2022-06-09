@@ -10,16 +10,16 @@ const Value = () => {
     const incriment = 'inc';
 
     const incrimentValue = (type) => {
-        if(type === 'inc') setValue(control => ++control);
-        if(type === 'dec') setValue(control => --control);
+        if(type === 'inc') return setValue(control => ++control);
+        if(type === 'dec') return setValue(control => --control);
         return console.log('ERROR IN Value.jsx');
     }
 
     return (
         <section className={`${styles['value']}`}>
-            <IncrimentButton onClick={()=> incrimentValue(incriment)} type={incriment}/>
+            <IncrimentButton className={`${styles[`left`]}`} onClick={()=> incrimentValue(decriment)} type={decriment}/>
                 <p>{valueState}</p>
-            <IncrimentButton onClick={()=> incrimentValue(decriment)} type={decriment}/>
+            <IncrimentButton className={`${styles[`right`]}`} onClick={()=> incrimentValue(incriment)} type={incriment}/>
         </section>
     );
 };

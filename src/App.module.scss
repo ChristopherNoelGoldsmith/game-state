@@ -2,10 +2,20 @@
 
 .container{
     @include mixins.flex-column;
-
     width: 100vw;
     height: 100vh;
     min-width: 350px;
     min-height: 650px;
     overflow: none;
+}
+
+.container::after{
+    content: '';
+    position: absolute;
+    background-image: url('./img/placeholderbg.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1000;
 }

@@ -12,7 +12,7 @@ const IncrimentButton = props => {
     }
 
     return (
-        <button className={`${styles[`btn`]}`} onClick={props.onClick}>{buttonType(props.type)}</button>
+        <button className={`${props.className} ${styles[`btn`]}`} onClick={props.onClick}></button>
     )
 };
 

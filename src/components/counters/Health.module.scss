@@ -1,0 +1,9 @@
+@use '../sass/mixins.module.scss';
+
+.health{
+    font-size: mixins.$font-large;
+    position: absolute;
+    z-index: 1000;
+    top: 5vh;
+    left: 5px;
+}
