@@ -4,7 +4,10 @@ import styles from "./Speed.module.scss";
 
 const Speed = () => {
     return (
-    <Value/>
+        <div className={`${styles['speed']}`}>
+            <Value/>
+        </div>
+    
     )
 };
 

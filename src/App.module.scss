@@ -4,20 +4,21 @@
     @include mixins.flex-column;
     width: 100vw;
     height: 100vh;
-    min-width: 350px;
-    min-height: 650px;
-    max-height: 900px;
-    max-width: 540px;
-    overflow: none;
+    max-height: 100vh;
+    overflow: hidden;
 }
 
 .container::after{
     content: '';
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
     background-image: url('./img/placeholderbg.jpg');
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
     width: 100vw;
     height: 100vh;
     z-index: -1000;
+    overflow: hidden;
 }

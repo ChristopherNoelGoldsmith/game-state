@@ -24,9 +24,26 @@
 
 $font-xs: 0.5rem;
 $font-small: 0.75rem;
-$font-normal: 1rem;
-$font-large: 2rem;
-$font-xl: 3rem;
+$font-normal: 1.5rem;
+$font-large: 3rem;
+$font-xl: 5rem;
+
+//Component Colors
+
+@mixin button1{
+    font-size: $font-normal;
+    background: rgba($color: black, $alpha: 0.8);
+    border: none;
+    border-radius: 5px;
+    width: 6rem;
+    height: 4rem;
+    margin: 0.5rem;
+    color: ivory;
+    letter-spacing: 2px;
+    :hover{
+        opacity: 0.9;
+    }
+}
 
 //Box Styles
 

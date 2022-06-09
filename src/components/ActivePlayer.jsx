@@ -5,19 +5,30 @@ import Control from './counters/Control';
 import Health from './counters/Health';
 import CharacterName from './counters/CharacterName';
 import CharacterStatus from './CharacterStatus';
+import Block from './counters/Block';
+import HitBlockButtons from './characterButtons/HitBlockButtons';
+import { Fragment } from 'react';
 
 const ActivePlayer = props => {
     return(
+        <Fragment>
         <section className={`${styles['active-player']}`} id="activePlayer">
                 <div><CharacterStatus/></div>
                 <div className={`${styles['attack-stats']}`}>
                     <AttackZone/>
-                    <Damage/>
                 </div>
+                <div className={`${styles['attack-stats']} ${styles['damage']}`}>
+                <Damage/>
                 <div className={`${styles['deck-control']}`}>
                     <Control/>
+                    <Block/>
+                </div>
                 </div>
         </section>
+        <div className={`${styles['control-buttons']}`}>
+            <HitBlockButtons/>
+        </div>
+        </Fragment>
     );
 };
 

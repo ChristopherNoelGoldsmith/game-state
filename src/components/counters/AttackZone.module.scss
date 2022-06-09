@@ -1,7 +1,7 @@
 @use '../sass/mixins.module.scss';
-$arrow-sized: 5rem;
+$arrow-sized: 8rem;
 $arrow-position: translate(-15%, 0); 
-$arrow-position-high: translate(-12%, -11%);
+$arrow-position-high: translate(-9%, -12%);
 $arrow-position-low: translate(-14%, 5%);
 
 .speed-zones{
@@ -38,12 +38,11 @@ $arrow-position-low: translate(-14%, 5%);
     .zone-btns{
         @include mixins.flex-column;
         button{
-            height: $arrow-sized * 0.6;
+            opacity: 0;
+            @include mixins.button1;
+            height: $arrow-sized * 0.5;
             width: $arrow-sized;
             margin: 1vh 1rem 1vh 2rem ;
-            border: none;
-            border-radius: 50%;
-            background: rgba($color: white, $alpha: 0.7);
         }
     }
 }
