@@ -1,0 +1,42 @@
+//Flex Styles
+
+@mixin flex-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-text: center;
+    flex-direction: row;    
+}
+
+@mixin flex-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-text: center;
+    flex-direction: column;
+}
+
+//Font Styles
+
+@mixin inc-fonts{
+    color: ivory;
+    text-shadow: 2px 2px #333;
+}
+
+$font-xs: 0.5rem;
+$font-small: 0.75rem;
+$font-normal: 1rem;
+$font-large: 2rem;
+$font-xl: 3rem;
+
+//Box Styles
+
+@mixin border-square{
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+@mixin border-round{
+    bborder: 1px solid black;
+    border-radius: 50%;
+}

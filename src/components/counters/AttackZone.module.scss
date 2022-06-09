@@ -1,0 +1,73 @@
+@use '../sass/mixins.module.scss';
+$arrow-sized: 5rem;
+
+@keyframes low{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(40deg);
+    }
+}
+
+
+.speed-zones{
+    width: auto;
+    height: auto;
+    .zone-arrow{
+        position: absolute;
+        width: $arrow-sized;
+        height: $arrow-sized;
+        z-index: 1;
+        @include mixins.border-round;
+        box-shadow: -3px 3px 3px 3px rgba($color: #000000, $alpha: 0.7);
+        border: 2px solid black;
+        .arrow-shaft{
+            transform: translate($arrow-sized / 2.5 ,$arrow-sized / 3);
+            position: absolute;
+            background: inherit;
+            width: $arrow-sized;
+            height: $arrow-sized / 3;
+            .arrow-point{              
+                transform: translate($arrow-sized, $arrow-sized / -6);
+                position: absolute;
+                width: 0; 
+                height: 0; 
+                border-top: $arrow-sized / 3 solid transparent;
+                border-bottom: $arrow-sized / 3 solid transparent;
+            }
+        }
+    }
+
+    @include mixins.flex-row;
+    .zone-btns{
+        @include mixins.flex-column;
+    }
+}
+
+.low{
+    animation: low 2s ease;
+    background: yellow;
+    transform: rotate(40deg);
+    .arrow-point{
+        border-left: $arrow-sized / 3 solid yellow;
+    }
+}
+.high{
+    animation: high 2s ease;
+    background: red;
+    transform: rotate(-40deg);
+    .arrow-shaft{
+        .arrow-point{
+            border-left: $arrow-sized / 3 solid red;
+        }
+    }
+}
+.mid{
+    animation: low 2s ease;
+    background: orangered;
+    transform: rotate(40deg);
+    .arrow-point{
+        border-left: $arrow-sized / 3 solid orangered;
+    }
+}

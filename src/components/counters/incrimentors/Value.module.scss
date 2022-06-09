@@ -1,0 +1,10 @@
+@use '../../sass/mixins.module.scss';
+
+.value{
+    @include mixins.flex-row;
+    margin: 2px;
+    padding: 4px;
+    p{
+        width: mixins.$font-xl;
+    }
+}

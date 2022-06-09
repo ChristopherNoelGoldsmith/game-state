@@ -1,0 +1,12 @@
+@use '../sass/mixins.module.scss';
+
+.character-name{
+    @include mixins.inc-fonts;
+    font-size: mixins.$font-large;
+    letter-spacing: 5px;
+    transform: rotate(90deg);
+    position: absolute;
+    z-index: 100;
+    left: -2%;
+    top: 5%;
+}
