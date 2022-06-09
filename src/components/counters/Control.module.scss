@@ -2,5 +2,7 @@
 
 .control{
     @include mixins.border-round;
-    background: ivory;
+    background: grey;
+    height: 8vh;
+    width: 8vh;
 }
