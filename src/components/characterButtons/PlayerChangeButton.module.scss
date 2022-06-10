@@ -1,0 +1,16 @@
+@use "../sass/mixins.module.scss";
+.player-change-button {
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 10000;
+	button {
+		font-size: mixins.$font-normal;
+		background: rgba($color: green, $alpha: 0.25);
+		width: 5rem;
+		height: 5rem;
+		border: none;
+		color: ivory;
+		border-radius: 5px;
+	}
+}

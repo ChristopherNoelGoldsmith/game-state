@@ -5,7 +5,6 @@ import { playerActions } from "../../store/players";
 
 const HitBlockButtons = () => {
 	const [player, dispatchPlayer] = usePlayerStats();
-	console.log(player);
 	const activePlayer = player.player1.active ? "player1" : "player2";
 
 	const damage = player[activePlayer].damage;
@@ -18,7 +17,7 @@ const HitBlockButtons = () => {
 		dispatchPlayer(
 			playerActions.changePlayerHealth({
 				health: Math.ceil(damage / 2) * -1,
-				player: "player1",
+				player: activePlayer,
 			})
 		);
 		return dispatchPlayer(playerActions.setDefault({ type: "" }));
@@ -28,7 +27,7 @@ const HitBlockButtons = () => {
 		dispatchPlayer(
 			playerActions.changePlayerHealth({
 				health: damage * -1,
-				player: "player1",
+				player: activePlayer,
 			})
 		);
 		return dispatchPlayer(playerActions.setDefault({ type: "" }));

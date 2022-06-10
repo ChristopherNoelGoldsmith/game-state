@@ -1,7 +1,7 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const player1 = {
-	name: null,
+	name: "Player1",
 	active: true,
 	health: 40,
 	maxHealth: 40,
@@ -9,7 +9,7 @@ const player1 = {
 	speed: 4,
 };
 const player2 = {
-	name: null,
+	name: "Player2",
 	active: false,
 	health: 40,
 	maxHealth: 40,
@@ -17,33 +17,31 @@ const player2 = {
 	speed: 4,
 };
 
-const initialState = { player1, player2 };
-
 let player = createSlice({
 	name: "players",
 	initialState: { player1, player2 },
 	reducers: {
 		changeActivePlayer(state) {
-			state = current(state);
 			const { player1, player2 } = state;
-			state.player1.active = !state.player1.active;
-			state.player2.active = !state.player2.active;
+			player1.active = !player1.active;
+			player2.active = !player2.active;
 			return;
 		},
-		setPlayersHealth(state, action) {
+		setPlayersStats(state, action) {
 			//takes the value of the selected pair and sets both players health to this amount;
 			const { player1, player2 } = state;
 			player1.health = action.payload.player1.health;
 			player1.maxHealth = action.payload.player1.maxHealth;
+			player1.name = action.payload.player1.name;
 			player2.health = action.payload.player2.health;
 			player2.maxHealth = action.payload.player2.maxHealth;
+			player2.name = action.payload.player2.name;
 			return;
 		},
 		changePlayerHealth(state, action) {
 			//{player: 'player', health: Number }
 			//alters health by the passed value of the action;
 
-			console.log(action);
 			const incrimentBy = action.payload.health;
 			const player = action.payload.player;
 			const health = state[player].health + incrimentBy;

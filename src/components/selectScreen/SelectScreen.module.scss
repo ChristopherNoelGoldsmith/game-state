@@ -1,0 +1,39 @@
+@use "../sass/mixins.module.scss";
+
+.select-screen {
+	@include mixins.flex-column;
+	label {
+		@include mixins.inc-fonts;
+
+		font-size: mixins.$font-xl;
+	}
+	form {
+		@include mixins.flex-column;
+		figure {
+			@include mixins.flex-column;
+			input {
+				@include mixins.inc-fonts;
+				height: 10vh;
+				font-size: mixins.$font-large;
+				text-align: center;
+				background: rgba($color: black, $alpha: 0.5);
+				:focus {
+					@include mixins.inc-fonts;
+					background: rgba($color: black, $alpha: 0.5);
+				}
+			}
+		}
+		button {
+			height: 10vh;
+			width: 30vw;
+			background: black;
+			color: ivory;
+			font-size: mixins.$font-large;
+			border: 3px solid green;
+			:hover {
+				opacity: 0.9;
+				color: green;
+			}
+		}
+	}
+}
