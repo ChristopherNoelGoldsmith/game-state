@@ -5,11 +5,33 @@ import { playerActions } from "../../store/players";
 
 const HitBlockButtons = () => {
 	const [player, dispatchPlayer] = usePlayerStats();
+	console.log(player);
+	const activePlayer = player.player1.active ? "player1" : "player2";
+
+	const damage = player[activePlayer].damage;
 
 	const blockHandler = () => {
-		return dispatchPlayer(
-			playerActions.changePlayerHealth({ health: 4, player: "player1" })
+		return dispatchPlayer(playerActions.setDefault({ type: "" }));
+	};
+
+	const halfBlockHandler = () => {
+		dispatchPlayer(
+			playerActions.changePlayerHealth({
+				health: Math.ceil(damage / 2) * -1,
+				player: "player1",
+			})
 		);
+		return dispatchPlayer(playerActions.setDefault({ type: "" }));
+	};
+
+	const hitHandler = () => {
+		dispatchPlayer(
+			playerActions.changePlayerHealth({
+				health: damage * -1,
+				player: "player1",
+			})
+		);
+		return dispatchPlayer(playerActions.setDefault({ type: "" }));
 	};
 
 	//fix buttons
@@ -21,10 +43,10 @@ const HitBlockButtons = () => {
 			<Button onClick={blockHandler}>
 				<p>BLOCK</p>
 			</Button>
-			<Button onClick={blockHandler}>
+			<Button onClick={halfBlockHandler}>
 				<p>HALF-BLOCK</p>
 			</Button>
-			<Button onClick={blockHandler}>
+			<Button onClick={hitHandler}>
 				<p>HIT</p>
 			</Button>
 		</section>

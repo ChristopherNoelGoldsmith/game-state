@@ -42,6 +42,8 @@ let player = createSlice({
 		changePlayerHealth(state, action) {
 			//{player: 'player', health: Number }
 			//alters health by the passed value of the action;
+
+			console.log(action);
 			const incrimentBy = action.payload.health;
 			const player = action.payload.player;
 			const health = state[player].health + incrimentBy;
@@ -75,6 +77,12 @@ let player = createSlice({
 				state[action.payload.player].damage--;
 				return;
 			}
+		},
+		setDefault(state, action) {
+			if (action.payload.type === "ALL")
+				state.player1.health = state.player1.maxHealth;
+			state.player1.speed = 4;
+			state.player1.damage = 4;
 		},
 	},
 });
