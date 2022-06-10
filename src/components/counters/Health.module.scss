@@ -1,13 +1,16 @@
-@use '../sass/mixins.module.scss';
+@use "../sass/mixins.module.scss";
 
-.health{
-    font-size: mixins.$font-xl;
-    position: absolute;
-    z-index: 1000;
-    top: 5vh;
-    left: 5px;
-    background-image: url('../../img/heart.png');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
+.health {
+	@include mixins.flex-row;
+	font-size: mixins.$font-xl;
+	height: mixins.$font-xl * 1.5;
+	width: mixins.$font-xl * 1.5;
+	position: absolute;
+	z-index: 1000;
+	top: 5vh;
+	left: 5px;
+	background-image: url("../../img/heart.png");
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
 }

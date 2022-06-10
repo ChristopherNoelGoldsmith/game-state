@@ -1,23 +1,19 @@
 import styles from "./Value.module.scss";
-import { useState } from "react";
+import { useEffect } from "react";
 import IncrimentButton from "../../UI/IncrimentButton";
 import useIncriment from "../../hooks/useIncriment";
 
 const Value = (props) => {
-	const [valueState, incriment, decriment] = useIncriment(props.default || 0);
-
 	return (
 		<section className={`${styles["value"]}`}>
 			<IncrimentButton
 				className={`${styles[`left`]}`}
-				onClick={decriment}
-				type={decriment}
+				onClick={props.decriment || null}
 			/>
-			<p>{valueState}</p>
+			<p>{props.default || 0}</p>
 			<IncrimentButton
 				className={`${styles[`right`]}`}
-				onClick={incriment}
-				type={incriment}
+				onClick={props.incriment || null}
 			/>
 		</section>
 	);
