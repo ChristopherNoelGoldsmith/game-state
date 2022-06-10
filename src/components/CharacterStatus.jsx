@@ -13,7 +13,7 @@ const CharacterStatus = (props) => {
 	const setStats = () => {
 		dispatchPlayers(
 			playerActions.setPlayersHealth({
-				player1: { health: 28, maxHealth: 28 },
+				player1: { name: "CHUNGUS", health: 50, maxHealth: 50 },
 				player2: { health: 19, maxHealth: 19 },
 			})
 		);

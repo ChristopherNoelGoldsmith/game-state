@@ -49,6 +49,10 @@ let player = createSlice({
 				state[player].health = state[player].maxHealth;
 				return;
 			}
+			if (health < 0) {
+				state[player].health = 0;
+				return;
+			}
 			state[player].health = health;
 			return state;
 		},
