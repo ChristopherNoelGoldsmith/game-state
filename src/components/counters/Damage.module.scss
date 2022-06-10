@@ -1,11 +1,12 @@
-@use '../sass/mixins.module.scss';
+@use "../sass/mixins.module.scss";
 
-.damage{
-    @include mixins.flex-row;
-    height: mixins.$font-xl *3;
-    width: mixins.$font-xl *3;
-    background-image: url('../../img/dmg-high.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+.damage {
+	@include mixins.flex-row;
+	height: mixins.$font-xl * 3;
+	width: mixins.$font-xl * 3;
+	font-size: mixins.$font-xl * 1.5;
+	background-image: url("../../img/dmg-high.png");
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
 }

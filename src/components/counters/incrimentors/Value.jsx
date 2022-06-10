@@ -1,7 +1,6 @@
 import styles from "./Value.module.scss";
 import { useEffect } from "react";
 import IncrimentButton from "../../UI/IncrimentButton";
-import useIncriment from "../../hooks/useIncriment";
 
 const Value = (props) => {
 	return (

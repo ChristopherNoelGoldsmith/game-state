@@ -33,18 +33,14 @@ let player = createSlice({
 		setPlayersHealth(state, action) {
 			//takes the value of the selected pair and sets both players health to this amount;
 			const { player1, player2 } = state;
-			return {
-				player1: {
-					active: true,
-					health: action.payload.player1.health,
-					maxHealth: action.payload.player1.maxHealth,
-				},
-				player2,
-			};
+			player1.health = action.payload.player1.health;
+			player1.maxHealth = action.payload.player1.maxHealth;
+			player2.health = action.payload.player2.health;
+			player2.maxHealth = action.payload.player2.maxHealth;
+			return;
 		},
 		changePlayerHealth(state, action) {
 			//{player: 'player', health: Number }
-			console.log(action);
 			//alters health by the passed value of the action;
 			const incrimentBy = action.payload.health;
 			const player = action.payload.player;
@@ -54,8 +50,27 @@ let player = createSlice({
 				return;
 			}
 			state[player].health = health;
-			console.log(state);
 			return state;
+		},
+		increaseSpeedOrDamage(state, action) {
+			if (action.payload.type === "speed") {
+				state[action.payload.player].speed++;
+				return;
+			}
+			if (action.payload.type === "damage") {
+				state[action.payload.player].damage++;
+				return;
+			}
+		},
+		decreaseSpeedOrDamage(state, action) {
+			if (action.payload.type === "speed") {
+				state[action.payload.player].speed--;
+				return;
+			}
+			if (action.payload.type === "damage") {
+				state[action.payload.player].damage--;
+				return;
+			}
 		},
 	},
 });

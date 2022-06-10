@@ -31,7 +31,6 @@ const HealthBar = (props) => {
 		);
 		return healthBarStyles(maxHealthPercentage);
 	};
-	console.log(players, health("player1"));
 	return (
 		<div className={`${styles["health-bar"]}`}>
 			<span style={health("player1")}></span>

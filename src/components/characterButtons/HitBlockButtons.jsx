@@ -6,8 +6,6 @@ import { playerActions } from "../../store/players";
 const HitBlockButtons = () => {
 	const [player, dispatchPlayer] = usePlayerStats();
 
-	console.log(player);
-
 	const blockHandler = () => {
 		return dispatchPlayer(
 			playerActions.changePlayerHealth({ health: 4, player: "player1" })
