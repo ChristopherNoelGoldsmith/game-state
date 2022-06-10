@@ -1,20 +1,24 @@
 import Button from '../UI/Button';
 import styles from './HitBlockButtons.module.scss';
-//import usePlayerStats from '../hooks/usePlayerStats';
+import usePlayerStats from '../hooks/usePlayerStats';
+import { playerActions } from '../../store/players';
 
 const HitBlockButtons = () => {
 
-    //const [player] = usePlayerStats();
+    const [player, dispatchPlayer] = usePlayerStats();
 
-    //console.log(player);
+    console.log(player);
 
+    const blockHandler = () => {
+        return dispatchPlayer(playerActions.changePlayerHealth({health: 4, player: 'player1'}));
+    }
 
     //fix buttons
     return (
     <section id="hit-block-buttons" className={`${styles['hit-block-buttons']}`}>
-        <Button><p>BLOCK</p></Button>
-        <Button><p>HALF-BLOCK</p></Button>
-        <Button><p>HIT</p></Button>
+        <Button onClick={blockHandler}><p>BLOCK</p></Button>
+        <Button onClick={blockHandler}><p>HALF-BLOCK</p></Button>
+        <Button onClick={blockHandler}><p>HIT</p></Button>
         </section>);
 }
 

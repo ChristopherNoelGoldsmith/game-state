@@ -38,10 +38,10 @@ $arrow-position-low: translate(-14%, 5%);
     .zone-btns{
         @include mixins.flex-column;
         button{
-            opacity: 0;
             @include mixins.button1;
             height: $arrow-sized * 0.5;
             width: $arrow-sized;
+            border-radius: 50%;
             margin: 1vh 1rem 1vh 2rem ;
         }
     }

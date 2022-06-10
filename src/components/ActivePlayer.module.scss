@@ -7,11 +7,12 @@
     text-align: center;
     width: 100vw;
     height: 100vh;
-    justify-content: space-around;
+    justify-content: flex-end;
     .attack-stats{
         @include mixins.flex-row;
         font-size: mixins.$font-xl;
         height: 20%;
+        margin-bottom: 8vh;        
         .deck-control{
             @include mixins.flex-column;
             justify-content: space-around;

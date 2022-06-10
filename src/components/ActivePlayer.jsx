@@ -19,10 +19,6 @@ const ActivePlayer = props => {
                 </div>
                 <div className={`${styles['attack-stats']} ${styles['damage']}`}>
                 <Damage/>
-                <div className={`${styles['deck-control']}`}>
-                    <Control/>
-                    <Block/>
-                </div>
                 </div>
         </section>
         <div className={`${styles['control-buttons']}`}>

@@ -1,9 +1,11 @@
 import { useSelector, useDispatch } from 'react-redux';
-//import { playerActions } from '../../store/players';
 
 const usePlayerStats = () => {
     const player = useSelector(store => store.player);
-    return [player];
+    
+    const dispatch = useDispatch();
+
+    return [player, dispatch];
 }
 
 export default usePlayerStats;

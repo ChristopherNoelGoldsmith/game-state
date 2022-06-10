@@ -48,11 +48,9 @@ $font-xl: 5rem;
 //Box Styles
 
 @mixin border-square{
-    border: 1px solid black;
     border-radius: 5px;
 }
 
 @mixin border-round{
-    border: 1px solid black;
     border-radius: 50%;
 }
