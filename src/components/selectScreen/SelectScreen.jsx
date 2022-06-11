@@ -50,13 +50,11 @@ const SelectScreen = (props) => {
 
 	const player1NameHandler = (event) => {
 		dispatchStart({ type: "name", player: player1, value: event.target.value });
-		checkIfValid();
 	};
 
 	const player2NameHandler = (event) => {
 		const name = event.target.value;
 		dispatchStart({ type: "name", player: player2, value: name });
-		checkIfValid();
 	};
 
 	const player1HealthHandler = (event) => {
@@ -83,9 +81,11 @@ const SelectScreen = (props) => {
 
 	const checkIfValid = () => {
 		console.log(playerStarts);
-		if (playerStarts.player1.name.length < 1) return setValid(false);
-		if (playerStarts.player1.name.length < 1) return setValid(false);
-		if (playerStarts.player2.health < 1) return setValid(false);
+		if (!playerStarts.player1.name)
+			dispatchStart({ type: "name", player: player1, value: "Player 1" });
+		if (!playerStarts.player2.name)
+			dispatchStart({ type: "name", player: player2, value: "Player 2" });
+		if (playerStarts.player1.health < 1) return setValid(false);
 		if (playerStarts.player2.health < 1) return setValid(false);
 		return setValid(true);
 	};

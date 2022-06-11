@@ -9,7 +9,7 @@ const healthBarStyles = (healthPercentage) => {
 			animation: "none",
 		};
 	}
-	if (healthPercentage > 50) {
+	if (healthPercentage > 49) {
 		return {
 			height: `${healthPercentage}%`,
 			background: "green",
