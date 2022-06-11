@@ -3,16 +3,16 @@ import { createSlice } from "@reduxjs/toolkit";
 const player1 = {
 	name: "Player1",
 	active: true,
-	health: 40,
-	maxHealth: 40,
+	health: 28,
+	maxHealth: 35,
 	damage: 4,
 	speed: 4,
 };
 const player2 = {
 	name: "Player2",
 	active: false,
-	health: 40,
-	maxHealth: 40,
+	health: 28,
+	maxHealth: 35,
 	damage: 4,
 	speed: 4,
 };

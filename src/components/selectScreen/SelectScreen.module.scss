@@ -1,13 +1,19 @@
 @use "../sass/mixins.module.scss";
 
 .select-screen {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background: rgba($color: black, $alpha: 0.8);
 	@include mixins.flex-column;
+	z-index: 10000;
 	label {
 		@include mixins.inc-fonts;
 
 		font-size: mixins.$font-xl;
 	}
 	form {
+		z-index: inherit + 1;
 		@include mixins.flex-column;
 		figure {
 			@include mixins.flex-column;
@@ -17,21 +23,29 @@
 				font-size: mixins.$font-large;
 				text-align: center;
 				background: rgba($color: black, $alpha: 0.5);
+				border: none;
+				border-bottom: 2px darkgreen dotted;
 				:focus {
 					@include mixins.inc-fonts;
 					background: rgba($color: black, $alpha: 0.5);
 				}
 			}
 		}
-		button {
-			height: 10vh;
-			width: 30vw;
-			background: black;
-			color: ivory;
-			font-size: mixins.$font-large;
-			border: 3px solid green;
-			:hover {
-				opacity: 0.9;
+		.buttons {
+			@include mixins.flex-row;
+			button {
+				height: 10vh;
+				width: 30vw;
+				max-width: 12rem;
+				background: black;
+				color: ivory;
+				font-size: mixins.$font-normal;
+				border: 2px solid green;
+				border-radius: 5px;
+				margin: 1vh 1vw 0 1vw;
+			}
+			button:hover {
+				opacity: 0.7;
 				color: green;
 			}
 		}

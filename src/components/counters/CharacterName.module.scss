@@ -1,13 +1,13 @@
-@use '../sass/mixins.module.scss';
+@use "../sass/mixins.module.scss";
 
-.character-name{
-    @include mixins.inc-fonts;
-    font-size: mixins.$font-large;
-    letter-spacing: 5px;
-    width: 100vw;
-    position: absolute;
-    background: rgba($color: black, $alpha: 0.3);
-    top: 0;
-    left: 0;
-    z-index: 100;
+.character-name {
+	@include mixins.inc-fonts;
+	font-size: mixins.$font-large;
+	letter-spacing: 5px;
+	width: 100vw;
+	position: absolute;
+	background: transparent;
+	top: 0;
+	left: 0;
+	z-index: 100;
 }

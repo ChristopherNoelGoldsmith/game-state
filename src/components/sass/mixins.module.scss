@@ -35,14 +35,15 @@ $font-xl: 5rem;
 	font-size: $font-normal;
 	background: rgba($color: darkgreen, $alpha: 0.3);
 	border: none;
-	border-radius: 5px;
+	border-radius: 50%;
 	width: 6rem;
 	height: 4rem;
 	margin: 0.5rem;
 	color: ivory;
 	letter-spacing: 2px;
 	:hover {
-		opacity: 0.9;
+		opacity: 0.7;
+		color: green;
 	}
 }
 

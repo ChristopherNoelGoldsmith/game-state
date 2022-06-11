@@ -1,9 +1,10 @@
 @use "../sass/mixins.module.scss";
 .player-change-button {
+	@include mixins.flex-column;
 	position: fixed;
 	top: 5vh;
 	right: 0;
-	z-index: 10000;
+	z-index: 1000;
 	button {
 		font-size: mixins.$font-normal;
 		background: rgba($color: green, $alpha: 0.25);
@@ -12,5 +13,9 @@
 		border: none;
 		color: ivory;
 		border-radius: 5px;
+	}
+	i {
+		@include mixins.inc-fonts;
+		padding: 2rem;
 	}
 }

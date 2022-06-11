@@ -90,6 +90,11 @@ const SelectScreen = (props) => {
 		return setValid(true);
 	};
 
+	const resetHandler = () => {
+		props.selectScreenHandler();
+		return dispatchPlayers(playerActions.setDefault({ type: "ALL" }));
+	};
+
 	const statsSubmitHandler = (event) => {
 		event.preventDefault();
 		if (isValid === false) return alert("All Fields Need A Value...");
@@ -107,7 +112,7 @@ const SelectScreen = (props) => {
 				},
 			})
 		);
-		return props.start();
+		return props.selectScreenHandler();
 	};
 
 	return (
@@ -157,9 +162,13 @@ const SelectScreen = (props) => {
 						/>
 					</div>
 				</figure>
-				<button className={styles["start-btn"]} type="submit">
-					START
-				</button>
+				<figure className={styles["buttons"]}>
+					<button className={styles["start-btn"]} type="submit">
+						SET
+					</button>
+					<button onClick={props.selectScreenHandler}>CLOSE</button>
+					<button onClick={resetHandler}>RESET</button>
+				</figure>
 			</form>
 		</section>
 	);

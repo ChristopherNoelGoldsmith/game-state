@@ -27,7 +27,7 @@ const ActivePlayer = (props) => {
 			<div className={`${styles["control-buttons"]}`}>
 				<HitBlockButtons />
 			</div>
-			<PlayerChangeButtons />
+			<PlayerChangeButtons selectScreenHandler={props.selectScreenHandler} />
 		</Fragment>
 	);
 };

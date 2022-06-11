@@ -2,6 +2,7 @@ import ActivePlayer from "./components/ActivePlayer";
 import SelectScreen from "./components/selectScreen/SelectScreen";
 import styles from "./App.module.scss";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 
 //
 
@@ -14,8 +15,17 @@ function App() {
 
 	return (
 		<div className={styles.container}>
-			{!select && <SelectScreen start={selectScreenHandler} />}
-			{select && <ActivePlayer />}
+			<Helmet>
+				<meta charSet="utf-8" />
+				<title>UVS SIMULATOR</title>
+				<link
+					rel="canonical"
+					href="
+universus-sim.netlify.app"
+				/>
+			</Helmet>
+			{select && <SelectScreen selectScreenHandler={selectScreenHandler} />}
+			<ActivePlayer selectScreenHandler={selectScreenHandler} />
 		</div>
 	);
 }

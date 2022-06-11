@@ -1,35 +1,46 @@
-@use '../sass/mixins.module.scss';
+@use "../sass/mixins.module.scss";
 
-@keyframes health{
-    0%{
-        background: crimson;
-        transform: scale(1);
-    }
-    50%{
-        background: red;
-        transform: scale(1.01);
-    }
-    100%{
-        background: crimson;
-        transform: scale(1);
-    }
+@keyframes health {
+	0% {
+		background: crimson;
+		transform: scale(1);
+	}
+	50% {
+		background: red;
+		//transform: scale(1.01);
+	}
+	100% {
+		background: crimson;
+		transform: scale(1);
+	}
 }
 
 .health-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    border: black 2px solid;
-    height: 95vh;
-    width: 5vw;
-    span{
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 100%;
-        width: 4vw;
-        background: crimson;
-        animation: health 0.7s ease infinite;
-    }
-
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 100vh;
+	width: 5vw;
+	span.health {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: 100%;
+		width: 6vw;
+		background: crimson;
+		animation: health 0.7s ease infinite;
+		border-radius: 15px;
+		span {
+			height: 100vh;
+			bottom: inherit;
+			left: inherit;
+			width: 6vw;
+			position: absolute;
+			background-image: url("../../img/healthbarshine.png");
+			background-size: cover;
+			background-position: center;
+			border: 1px solid black;
+			border-radius: inherit;
+		}
+	}
 }

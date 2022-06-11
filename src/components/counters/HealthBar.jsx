@@ -42,7 +42,9 @@ const HealthBar = (props) => {
 	};
 	return (
 		<div className={`${styles["health-bar"]}`}>
-			<span style={health(activePlayer)}></span>
+			<span className={`${styles["health"]}`} style={health(activePlayer)}>
+				<span id="shine"></span>
+			</span>
 		</div>
 	);
 };
