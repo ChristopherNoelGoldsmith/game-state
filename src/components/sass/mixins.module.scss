@@ -1,26 +1,27 @@
 //Flex Styles
 
 @mixin flex-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-text: center;
-    flex-direction: row;    
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-text: center;
+	flex-direction: row;
 }
 
 @mixin flex-column {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-text: center;
-    flex-direction: column;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-text: center;
+	flex-direction: column;
 }
 
 //Font Styles
 
-@mixin inc-fonts{
-    color: ivory;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;}
+@mixin inc-fonts {
+	color: ivory;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
 
 $font-xs: 0.5rem;
 $font-small: 0.75rem;
@@ -30,27 +31,27 @@ $font-xl: 5rem;
 
 //Component Colors
 
-@mixin button1{
-    font-size: $font-normal;
-    background: rgba($color: black, $alpha: 0.8);
-    border: none;
-    border-radius: 5px;
-    width: 6rem;
-    height: 4rem;
-    margin: 0.5rem;
-    color: ivory;
-    letter-spacing: 2px;
-    :hover{
-        opacity: 0.9;
-    }
+@mixin button1 {
+	font-size: $font-normal;
+	background: rgba($color: darkgreen, $alpha: 0.3);
+	border: none;
+	border-radius: 5px;
+	width: 6rem;
+	height: 4rem;
+	margin: 0.5rem;
+	color: ivory;
+	letter-spacing: 2px;
+	:hover {
+		opacity: 0.9;
+	}
 }
 
 //Box Styles
 
-@mixin border-square{
-    border-radius: 5px;
+@mixin border-square {
+	border-radius: 5px;
 }
 
-@mixin border-round{
-    border-radius: 50%;
+@mixin border-round {
+	border-radius: 50%;
 }

@@ -1,81 +1,55 @@
-@use '../sass/mixins.module.scss';
+@use "../sass/mixins.module.scss";
 $arrow-sized: 8rem;
-$arrow-position: translate(-15%, -5%); 
+$arrow-position: translate(-15%, -5%);
 $arrow-position-high: translate(-9%, -12%);
 $arrow-position-low: translate(-14%, 5%);
 
-.speed-zones{
-    width: auto;
-    height: auto;
-    .zone-arrow{
-        transform: $arrow-position;
-        position: absolute;
-        width: $arrow-sized;
-        height: $arrow-sized;
-        z-index: -100;
-        @include mixins.border-round;
-//        box-shadow: -3px 3px 3px 3px rgba($color: #000000, $alpha: 0.7);
-        border: 2px solid black;
-        .arrow-shaft{
-            transform: translate($arrow-sized / 2.5 ,$arrow-sized / 3);
-            position: absolute;
-            background: inherit;
-            width: $arrow-sized;
-            height: $arrow-sized / 3;
-            .arrow-point{              
-                transform: translate($arrow-sized, $arrow-sized / -6);
-                position: absolute;
-                width: 0; 
-                height: 0; 
-                border-top: $arrow-sized / 3 solid transparent;
-                border-bottom: $arrow-sized / 3 solid transparent;
-            }
-        }
-    }
-
-
-    @include mixins.flex-row;
-    .zone-btns{
-        @include mixins.flex-column;
-        button{
-            @include mixins.button1;
-            height: $arrow-sized * 0.5;
-            width: $arrow-sized;
-            border-radius: 50%;
-            margin: 1vh 1rem 1vh 2rem ;
-        }
-    }
+.speed-zones {
+	section {
+		margin-bottom: 20vh;
+		.zone-arrow {
+			background-size: cover;
+			background-repeat: no-repeat;
+			width: $arrow-sized * 2;
+			height: $arrow-sized * 2;
+			z-index: -100;
+		}
+		.speed {
+			position: absolute;
+			transform: translate(45%, 17%);
+		}
+		.zone-btns {
+			z-index: 1000;
+			position: aboslute;
+			margin-left: 12rem;
+			transform: translate(0, -10%);
+			//transform: translateX(50%);
+			@include mixins.flex-column;
+			button {
+				@include mixins.button1;
+				height: $arrow-sized * 0.8;
+				width: $arrow-sized / 1.5;
+				margin: 0 1rem 0 2rem;
+				opacity: 0;
+			}
+			button.low,
+			button.high {
+				transform: translate(-50%, 0);
+			}
+		}
+	}
 }
 
-.zone-arrow.low{
-    background: yellow;
-    transform: rotate(40deg) $arrow-position-low;
-    transition: all 0.8s ease;
-    .arrow-point{
-        border-left: $arrow-sized / 3 solid yellow;
-        transition: all 0.8s ease;
-
-    }
+.zone-arrow.low {
+	background-image: url("../../img/_lowatk.png");
+	transition: all 0.8s ease;
 }
-.zone-arrow.high{
-    background: red;
-    transform: rotate(-40deg) $arrow-position-high;
-    transition: all 0.8s ease;
-    .arrow-shaft{
-        .arrow-point{
-            border-left: $arrow-sized / 3 solid red;
-            transition: all 0.8s ease;
-
-        }
-    }
+.zone-arrow.high {
+	background-image: url("../../img/_highatk.png");
+	transition: all 0.8s ease;
 }
-.zone-arrow.mid{
-    background: orangered;
-    transform: rotate(0deg) $arrow-position;
-    transition: all 0.8s ease;
-    .arrow-point{
-        border-left: $arrow-sized / 3 solid orangered;
-        transition: all 0.8s ease;
 
-    }
+.zone-arrow.mid {
+	background-image: url("../../img/_midatk.png");
+	transition: all 0.8s ease;
 }

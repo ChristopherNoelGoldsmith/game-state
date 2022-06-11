@@ -8,20 +8,7 @@ import usePlayerStats from "./hooks/usePlayerStats";
 
 const CharacterStatus = (props) => {
 	//props.player1.character / player2
-	const [players, dispatchPlayers] = usePlayerStats();
-
-	// const setStats = () => {
-	// 	dispatchPlayers(
-	// 		playerActions.setPlayersHealth({
-	// 			player1: { name: "CHUNGUS", health: 50, maxHealth: 50 },
-	// 			player2: { health: 19, maxHealth: 19 },
-	// 		})
-	// 	);
-	// };
-
-	// useEffect(() => {
-	// 	setStats();
-	// }, []);
+	const [players] = usePlayerStats();
 
 	const activePlayer = players.player1.active ? "player1" : "player2";
 

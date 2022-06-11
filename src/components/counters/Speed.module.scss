@@ -1,5 +1,5 @@
-@use '../sass/mixins.module.scss';
+@use "../sass/mixins.module.scss";
 
-.speed{
-    font-size: mixins.$font-xl;
+.speed {
+	font-size: mixins.$font-xl * 1.5;
 }

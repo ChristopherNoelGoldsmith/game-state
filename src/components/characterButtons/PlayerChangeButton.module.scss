@@ -1,7 +1,7 @@
 @use "../sass/mixins.module.scss";
 .player-change-button {
 	position: fixed;
-	top: 0;
+	top: 5vh;
 	right: 0;
 	z-index: 10000;
 	button {

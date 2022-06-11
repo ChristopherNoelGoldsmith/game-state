@@ -7,9 +7,25 @@ const CharacterName = (props) => {
 
 	const activePlayer = players.player1.active ? "player1" : "player2";
 
+	const playerName = players[activePlayer].name;
+	//Needs fix
+	const name = () => {
+		if (playerName.length > 14) {
+			return {
+				"font-size": "1.5rem",
+			};
+		}
+		if (playerName.length > 7) {
+			return {
+				"font-size": "2rem",
+			};
+		}
+		return;
+	};
+
 	return (
-		<p className={`${styles["character-name"]}`}>
-			{players[activePlayer].name}
+		<p className={`${styles["character-name"]}`} style={name()}>
+			{playerName}
 		</p>
 	);
 };

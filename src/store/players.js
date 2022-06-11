@@ -77,10 +77,14 @@ let player = createSlice({
 			}
 		},
 		setDefault(state, action) {
-			if (action.payload.type === "ALL")
+			if (action.payload.type === "ALL") {
 				state.player1.health = state.player1.maxHealth;
+				state.player2.health = state.player2.maxHealth;
+			}
 			state.player1.speed = 4;
 			state.player1.damage = 4;
+			state.player2.speed = 4;
+			state.player2.damage = 4;
 		},
 	},
 });

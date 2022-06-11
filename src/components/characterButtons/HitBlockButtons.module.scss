@@ -1,11 +1,12 @@
-@use '../sass/mixins.module.scss';
+@use "../sass/mixins.module.scss";
 
-.hit-block-buttons{
-    position: fixed;
-    bottom: 0;
-    left: 5%;
-    @include mixins.flex-row;
-    button{
-        @include mixins.button1;
-    }
+.hit-block-buttons {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	@include mixins.flex-column;
+	flex-direction: column-reverse;
+	button {
+		@include mixins.button1;
+	}
 }
