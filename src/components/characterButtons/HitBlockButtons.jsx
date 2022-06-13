@@ -2,10 +2,11 @@ import Button from "../UI/Button";
 import styles from "./HitBlockButtons.module.scss";
 import usePlayerStats from "../hooks/usePlayerStats";
 import { playerActions } from "../../store/players";
+import useActivePlayers from "../hooks/useActivePlayers";
 
 const HitBlockButtons = () => {
 	const [player, dispatchPlayer] = usePlayerStats();
-	const activePlayer = player.player1.active ? "player1" : "player2";
+	const { activePlayer } = useActivePlayers();
 
 	const damage = player[activePlayer].damage;
 

@@ -6,13 +6,10 @@
 	right: 0;
 	z-index: 1000;
 	button {
+		@include mixins.button1;
+		min-height: 4rem;
+		height: auto;
 		font-size: mixins.$font-normal;
-		background: rgba($color: green, $alpha: 0.25);
-		width: 5rem;
-		height: 5rem;
-		border: none;
-		color: ivory;
-		border-radius: 5px;
 	}
 	i {
 		@include mixins.inc-fonts;

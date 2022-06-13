@@ -1,5 +1,6 @@
 import styles from "./HealthBar.module.scss";
 import usePlayerStats from "../hooks/usePlayerStats";
+import useActivePlayers from "../hooks/useActivePlayers";
 
 const healthBarStyles = (healthPercentage) => {
 	if (healthPercentage === 100) {
@@ -32,7 +33,7 @@ const healthBarStyles = (healthPercentage) => {
 const HealthBar = (props) => {
 	const [players] = usePlayerStats();
 
-	const activePlayer = players.player1.active ? "player1" : "player2";
+	const { activePlayer } = useActivePlayers();
 
 	const health = (player) => {
 		const maxHealthPercentage = Math.floor(

@@ -2,13 +2,11 @@ import styles from "./PlayerChangeButton.module.scss";
 import Button from "..//UI/Button";
 import usePlayerStats from "../hooks/usePlayerStats";
 import { playerActions } from "../../store/players";
-import { globals } from "../standardVariables";
+import useActivePlayers from "../hooks/useActivePlayers";
 
 const PlayerChangeButtons = (props) => {
 	const [player, dispatchPlayer] = usePlayerStats();
-
-	const activePlayer = player.player1.active ? "player1" : "player2";
-	const inactivePlayer = player.player2.active ? "player1" : "player2";
+	const { inactivePlayer } = useActivePlayers();
 
 	const changePlayerHandler = () => {
 		return dispatchPlayer(playerActions.changeActivePlayer());

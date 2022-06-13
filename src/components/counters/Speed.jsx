@@ -2,11 +2,12 @@ import Value from "./incrimentors/Value";
 import styles from "./Speed.module.scss";
 import usePlayerStats from "../hooks/usePlayerStats";
 import { playerActions } from "../../store/players";
+import useActivePlayers from "../hooks/useActivePlayers";
 
 const Speed = () => {
 	const [player, dispatchSpeed] = usePlayerStats();
 
-	const activePlayer = player.player1.active ? "player1" : "player2";
+	const { activePlayer } = useActivePlayers();
 
 	const speedIncreaseHanlder = () => {
 		dispatchSpeed(

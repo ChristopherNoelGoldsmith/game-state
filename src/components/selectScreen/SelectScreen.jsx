@@ -43,11 +43,6 @@ const SelectScreen = (props) => {
 	});
 	const [isValid, setValid] = useState(false);
 
-	const player1Name = useRef();
-	const player2Name = useRef();
-	const player1Health = useRef();
-	const player2Health = useRef();
-
 	const player1NameHandler = (event) => {
 		dispatchStart({ type: "name", player: player1, value: event.target.value });
 	};
@@ -122,7 +117,6 @@ const SelectScreen = (props) => {
 					<label htmlFor="player1">Player 1</label>
 					<div className={styles["name"]}>
 						<input
-							ref={player1Name}
 							onChange={player1NameHandler}
 							type="text"
 							id="player1-name"
@@ -132,7 +126,6 @@ const SelectScreen = (props) => {
 					<div className={styles["health"]}>
 						<input
 							onChange={player1HealthHandler}
-							ref={player1Health}
 							id="player1-health"
 							type="number"
 							value={playerStarts.player1.health}
@@ -145,7 +138,6 @@ const SelectScreen = (props) => {
 					<div className={styles["name"]}>
 						<input
 							onChange={player2NameHandler}
-							ref={player2Name}
 							type="text"
 							id="player2-name"
 							placeholder="NAME"
@@ -154,7 +146,6 @@ const SelectScreen = (props) => {
 					<div className={styles["health"]}>
 						<input
 							onChange={player2HealthHandler}
-							ref={player2Health}
 							id="player2-health"
 							type="number"
 							value={playerStarts.player2.health}

@@ -4,14 +4,14 @@ const player1 = {
 	name: "Player1",
 	active: true,
 	health: 28,
-	maxHealth: 35,
+	maxHealth: 28,
 	damage: 4,
 	speed: 4,
 };
 const player2 = {
 	name: "Player2",
 	active: false,
-	health: 28,
+	health: 35,
 	maxHealth: 35,
 	damage: 4,
 	speed: 4,

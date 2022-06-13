@@ -2,11 +2,12 @@ import styles from "./Damage.module.scss";
 import Value from "./incrimentors/Value";
 import usePlayerStats from "../hooks/usePlayerStats";
 import { playerActions } from "../../store/players";
+import useActivePlayers from "../hooks/useActivePlayers";
 
 const Damage = () => {
 	const [player, dispatchDamage] = usePlayerStats();
 
-	const activePlayer = player.player1.active ? "player1" : "player2";
+	const { activePlayer } = useActivePlayers();
 
 	const damageIncreaseHanlder = () => {
 		dispatchDamage(
