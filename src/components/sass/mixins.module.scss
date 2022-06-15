@@ -16,6 +16,13 @@
 	flex-direction: column;
 }
 
+//background image defaults
+@mixin bgimage {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 //Font Styles
 
 @mixin inc-fonts {
@@ -34,17 +41,21 @@ $font-xl: 5rem;
 @mixin button1 {
 	font-size: $font-normal;
 	background: transparent;
-	border: 1px solid black;
-	border-radius: 5px;
-	box-shadow: inset 1px 1px 2px 2px rgba($color: white, $alpha: 0.3);
 	min-width: 6rem;
 	min-height: 4rem;
 	margin: 0.5rem;
 	color: ivory;
 	letter-spacing: 2px;
+	border: none;
 	:hover {
 		opacity: 0.7;
 	}
+}
+
+@mixin button-style1 {
+	box-shadow: inset 1px 1px 2px 2px rgba($color: white, $alpha: 0.3);
+	border-radius: 5px;
+	border: 1px solid black;
 }
 
 //Box Styles

@@ -8,15 +8,14 @@ $arrow-position-low: translate(-14%, 5%);
 	section {
 		margin-bottom: 20vh;
 		.zone-arrow {
-			background-size: cover;
-			background-repeat: no-repeat;
+			@include mixins.bgimage;
 			width: $arrow-sized * 2;
 			height: $arrow-sized * 2;
 			z-index: -100;
 		}
 		.speed {
 			position: absolute;
-			transform: translate(45%, 17%);
+			transform: translate(0, 14%);
 		}
 		.zone-btns {
 			z-index: 1000;
@@ -28,7 +27,7 @@ $arrow-position-low: translate(-14%, 5%);
 			button {
 				@include mixins.button1;
 				height: $arrow-sized * 0.8;
-				width: $arrow-sized / 1.5;
+				width: calc($arrow-sized / 1.5);
 				margin: 0 1rem 0 2rem;
 				opacity: 0;
 			}

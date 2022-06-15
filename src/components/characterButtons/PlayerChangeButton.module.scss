@@ -10,18 +10,15 @@
 		@include mixins.flex-column;
 		@include mixins.button1;
 		height: auto;
-		border: none;
-		box-shadow: none;
+
 		label {
 			font-size: mixins.$font-normal;
 			max-width: 25vw;
 			word-wrap: break-word;
 		}
 		span {
+			@include mixins.bgimage;
 			background-image: url("../../img/heart.png");
-			background-position: center;
-			background-repeat: no-repeat;
-			background-size: cover;
 			height: mixins.$font-normal * 1.5;
 			width: mixins.$font-normal * 1.7;
 		}

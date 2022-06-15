@@ -1,21 +1,21 @@
-@use '../../sass/mixins.module.scss';
+@use "../../sass/mixins.module.scss";
 
-.value{
-    @include mixins.flex-row;
-    margin: 2px;
-    padding: 4px;
-    p{
-        @include mixins.inc-fonts;
-        width: mixins.$font-xl;
-    }
-    .left,
-    .right{
-        position: absolute;
-    }
-    .left{
-        transform: translateX(-50%);
-    }
-    .right{
-        transform: translateX(50%);
-    }
+.value {
+	@include mixins.flex-row;
+	margin: 2px;
+	padding: 4px;
+	p {
+		@include mixins.inc-fonts;
+		width: mixins.$font-xl * 2;
+	}
+	.left,
+	.right {
+		position: absolute;
+	}
+	.left {
+		transform: translateX(-50%);
+	}
+	.right {
+		transform: translateX(50%);
+	}
 }

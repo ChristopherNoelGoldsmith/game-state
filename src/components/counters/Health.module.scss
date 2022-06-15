@@ -1,6 +1,7 @@
 @use "../sass/mixins.module.scss";
 
 .health {
+	@include mixins.bgimage;
 	@include mixins.flex-row;
 	font-size: mixins.$font-xl;
 	height: mixins.$font-xl * 1.5;
@@ -10,13 +11,4 @@
 	top: 5vh;
 	left: 5px;
 	background-image: url("../../img/heart.png");
-	background-position: center;
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-.health.small {
-	font-size: mixins.$font-normal;
-	height: mixins.$font-normal * 1.5;
-	width: mixins.$font-normal * 1.5;
-	position: relative;
 }

@@ -17,10 +17,9 @@ const PlayerChangeButtons = (props) => {
 			id="player-change-button"
 			className={`${styles["player-change-button"]}`}
 		>
-			<i
-				onClick={props.selectScreenHandler}
-				className="fa-solid fa-gear fa-2x"
-			/>
+			<Button>
+				<i onClick={props.selectScreenHandler} className="fa-solid fa-gear" />
+			</Button>
 			<Button onClick={changePlayerHandler}>
 				<label>{player[inactivePlayer].name} </label>
 				<span>{player[inactivePlayer].health}</span>

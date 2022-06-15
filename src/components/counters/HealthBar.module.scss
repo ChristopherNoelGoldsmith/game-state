@@ -31,14 +31,13 @@
 		animation: health 0.7s ease infinite;
 		border-radius: 15px;
 		span {
+			@include mixins.bgimage;
 			height: 100vh;
 			bottom: inherit;
 			left: inherit;
 			width: 6vw;
 			position: absolute;
 			background-image: url("../../img/healthbarshine.png");
-			background-size: cover;
-			background-position: center;
 			border: 1px solid black;
 			border-radius: inherit;
 		}
