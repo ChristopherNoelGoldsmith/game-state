@@ -8,5 +8,8 @@
 	flex-direction: column-reverse;
 	button {
 		@include mixins.button1;
+		border: none;
+		background: transparent;
+		box-shadow: none;
 	}
 }

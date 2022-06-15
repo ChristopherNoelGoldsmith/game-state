@@ -14,3 +14,9 @@
 	background-size: contain;
 	background-repeat: no-repeat;
 }
+.health.small {
+	font-size: mixins.$font-normal;
+	height: mixins.$font-normal * 1.5;
+	width: mixins.$font-normal * 1.5;
+	position: relative;
+}

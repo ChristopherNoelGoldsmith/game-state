@@ -19,7 +19,7 @@ const Health = (props) => {
 	};
 
 	return (
-		<div className={`${styles["health"]}`}>
+		<div className={`${styles["health"]} ${styles[props.className]}`}>
 			<Value
 				incriment={() => incrimentHealthHandler("inc")}
 				decriment={() => incrimentHealthHandler("dec")}

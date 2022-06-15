@@ -1,15 +1,30 @@
 @use "../sass/mixins.module.scss";
 .player-change-button {
 	@include mixins.flex-column;
+	flex-direction: column-reverse;
 	position: fixed;
 	top: 5vh;
 	right: 0;
 	z-index: 1000;
 	button {
+		@include mixins.flex-column;
 		@include mixins.button1;
-		min-height: 4rem;
 		height: auto;
-		font-size: mixins.$font-normal;
+		border: none;
+		box-shadow: none;
+		label {
+			font-size: mixins.$font-normal;
+			max-width: 25vw;
+			word-wrap: break-word;
+		}
+		span {
+			background-image: url("../../img/heart.png");
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: mixins.$font-normal * 1.5;
+			width: mixins.$font-normal * 1.7;
+		}
 	}
 	i {
 		@include mixins.inc-fonts;

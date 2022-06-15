@@ -22,7 +22,8 @@ const PlayerChangeButtons = (props) => {
 				className="fa-solid fa-gear fa-2x"
 			/>
 			<Button onClick={changePlayerHandler}>
-				{player[inactivePlayer].name}
+				<label>{player[inactivePlayer].name} </label>
+				<span>{player[inactivePlayer].health}</span>
 			</Button>
 		</section>
 	);

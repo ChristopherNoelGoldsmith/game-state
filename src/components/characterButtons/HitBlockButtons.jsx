@@ -41,13 +41,15 @@ const HitBlockButtons = () => {
 			className={`${styles["hit-block-buttons"]}`}
 		>
 			<Button onClick={blockHandler}>
-				<p>BLOCK</p>
+				<i class="fa-solid fa-shield fa-2x"></i>
 			</Button>
 			<Button onClick={halfBlockHandler}>
-				<p>HALF-BLOCK</p>
+				<i class="fa-solid fa-shield-halved fa-2x"></i>{" "}
 			</Button>
 			<Button onClick={hitHandler}>
-				<p>HIT</p>
+				<p>
+					<i class="fa-solid fa-hand-fist fa-2x"></i>
+				</p>
 			</Button>
 		</section>
 	);
